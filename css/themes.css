@@ -1,0 +1,73 @@
+/* ============================================================
+   THEMES — Dark (default) & Light
+   ============================================================ */
+
+/* ---- Dark Theme ---- */
+[data-theme="dark"] {
+  --bg-base: #0a0f1c;
+  --bg-surface: #111827;
+  --bg-elevated: #1a2238;
+  --bg-hover: #1e293b;
+  --bg-active: #253352;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0a0f1c;
+
+  --bg-code-inline: rgba(0, 161, 224, 0.1);
+  --bg-code-block: #0d1117;
+  --bg-table-header: rgba(255, 255, 255, 0.04);
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4);
+
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --sidebar-bg: rgba(17, 24, 39, 0.95);
+  --topbar-bg: rgba(10, 15, 28, 0.85);
+}
+
+/* ---- Light Theme ---- */
+[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-hover: #f1f5f9;
+  --bg-active: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #f1f5f9;
+
+  --bg-code-inline: rgba(0, 161, 224, 0.08);
+  --bg-code-block: #0d1117; /* Always dark code blocks */
+  --bg-table-header: rgba(0, 0, 0, 0.03);
+
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-default: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.08);
+
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
+
+  --sidebar-bg: rgba(255, 255, 255, 0.95);
+  --topbar-bg: rgba(248, 250, 252, 0.85);
+}
+
+/* ---- Theme transition ---- */
+[data-theme="dark"] .icon-sun { display: none; }
+[data-theme="dark"] .icon-moon { display: block; }
+[data-theme="light"] .icon-sun { display: block; }
+[data-theme="light"] .icon-moon { display: none; }
