@@ -111,7 +111,7 @@ export default class Counter extends LightningElement {
       expectedOutcome: 'You should understand the basic files that make up a component and how they relate to each other.'
     },
     interviewQuestions: [
-      { scenario: 'What is Shadow DOM and why does LWC use it?', answer: 'Shadow DOM is a web standard that encapsulates a component's internal DOM structure and CSS. LWC uses it so that CSS styles defined in a component do not leak out and affect other parts of the page, and external CSS does not inadvertently break the component's styling. It ensures components are truly modular and isolated.' },
+      { scenario: 'What is Shadow DOM and why does LWC use it?', answer: 'Shadow DOM is a web standard that encapsulates a component\'s internal DOM structure and CSS. LWC uses it so that CSS styles defined in a component do not leak out and affect other parts of the page, and external CSS does not inadvertently break the component\'s styling. It ensures components are truly modular and isolated.' },
       { scenario: 'How is LWC different from Aura?', answer: 'Aura is a proprietary Salesforce framework built before modern web standards existed. LWC is built on native W3C web standards (Custom Elements, Shadow DOM). As a result, LWC is much faster (using native browser APIs rather than custom framework logic), lighter, easier to learn for standard web developers, and provides better encapsulation.' },
       { scenario: 'What is the purpose of the .js-meta.xml file?', answer: 'The metadata configuration file tells Salesforce how and where the component can be used. It defines the API version, whether the component is exposed to the App Builder (<isExposed>), which pages it can be placed on (<targets>), and any design properties (attributes) the admin can configure when dragging the component onto a page.' }
     ]
@@ -370,7 +370,7 @@ export default class Child extends LightningElement {
 </template>`, language: 'markup', explanation: 'The key attribute helps the virtual DOM efficiently track changes without full re-renders.' }
     ],
     practice: { intro: 'Render lists.', steps: ['Render a list of hardcoded objects.'], expectedOutcome: 'You can render arrays.' },
-    interviewQuestions: [{ scenario: 'Why is the key attribute required?', answer: 'It allows the framework's virtual DOM to efficiently update, move, or delete specific items without re-rendering the whole list.' }]
+    interviewQuestions: [{ scenario: 'Why is the key attribute required?', answer: 'It allows the framework\'s virtual DOM to efficiently update, move, or delete specific items without re-rendering the whole list.' }]
   },
 
   '4.9': {
