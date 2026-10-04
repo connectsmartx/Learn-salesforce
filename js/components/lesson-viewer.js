@@ -163,6 +163,11 @@ export async function renderLesson(lessonId) {
   main.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function escapeHTML(str) {
+  if (!str) return '';
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 function renderContentSections(content, lessonId) {
   let html = '';
 
@@ -186,8 +191,8 @@ function renderContentSections(content, lessonId) {
         </h2>
         ${content.examples.map((ex, i) => `
           <div class="example-card">
-            <h3 class="example-card__title">${ex.title}</h3>
-            <p class="example-card__desc">${ex.description}</p>
+            <h3 class="example-card__title">${escapeHTML(ex.title)}</h3>
+            <p class="example-card__desc">${escapeHTML(ex.description)}</p>
             <div class="code-block">
               <div class="code-block__header">
                 <span class="code-block__lang">${ex.language || 'apex'}</span>
@@ -195,7 +200,7 @@ function renderContentSections(content, lessonId) {
               </div>
               <pre><code class="language-${ex.language || 'apex'}">${highlight(ex.code, ex.language || 'apex')}</code></pre>
             </div>
-            ${ex.explanation ? `<div class="example-card__explanation"><strong>📖 Explanation:</strong> ${ex.explanation}</div>` : ''}
+            ${ex.explanation ? `<div class="example-card__explanation"><strong>📖 Explanation:</strong> ${escapeHTML(ex.explanation)}</div>` : ''}
           </div>
         `).join('')}
       </section>`;
@@ -209,12 +214,12 @@ function renderContentSections(content, lessonId) {
           <span class="lesson__section-icon">🛠️</span> Practice
         </h2>
         <div class="practice-card">
-          <p class="practice-card__intro">${content.practice.intro}</p>
+          <p class="practice-card__intro">${escapeHTML(content.practice.intro)}</p>
           <ol class="practice-card__steps">
-            ${content.practice.steps.map(step => `<li>${step}</li>`).join('')}
+            ${content.practice.steps.map(step => `<li style="white-space: pre-wrap; font-family: inherit; margin-bottom: 0.5rem; line-height: 1.5;">${escapeHTML(step)}</li>`).join('')}
           </ol>
           <div class="practice-card__outcome">
-            <strong>✅ Expected Outcome:</strong> ${content.practice.expectedOutcome}
+            <strong>✅ Expected Outcome:</strong> ${escapeHTML(content.practice.expectedOutcome)}
           </div>
         </div>
       </section>`;
@@ -232,10 +237,10 @@ function renderContentSections(content, lessonId) {
             <details class="interview-card">
               <summary class="interview-card__header">
                 <span class="interview-card__number">Q${i + 1}</span>
-                <p class="interview-card__scenario">📋 <strong>Scenario:</strong> ${q.scenario}</p>
+                <p class="interview-card__scenario">📋 <strong>Scenario:</strong> ${escapeHTML(q.scenario)}</p>
               </summary>
               <div class="interview-card__answer">
-                <div class="interview-card__content">${q.answer}</div>
+                <div class="interview-card__content">${escapeHTML(q.answer)}</div>
               </div>
             </details>
           `).join('')}

@@ -382,7 +382,7 @@ This XML metadata tells the Salesforce runtime:
 • Add a Currency field called "Budget__c"
 • Set sharing model to ReadWrite
 • No code was written — pure configuration!`,
-        language: 'xml',
+        language: 'javascript',
         explanation: 'Every customization in Salesforce is stored as metadata (XML). This metadata is what gets deployed between environments using tools like Salesforce CLI.'
       }
     ],
